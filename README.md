@@ -23,3 +23,8 @@ npm install gulp -g
 ```shell
 gulp
 ```
+
+### Bundle project
+```shell
+gulp build
+```
