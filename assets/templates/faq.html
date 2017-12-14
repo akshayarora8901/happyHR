@@ -1,0 +1,90 @@
+<div class="container blogdetailsec">
+  <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8 col-xs-12 faq">
+    <h1>Frequently asked questions</h1>
+    <div class="input-group  searchfawdiv">
+      <input type="search" class="form-control searchboxfaq" name="email" ng-model="searchInput" ng-change="searchFaqs()" placeholder="How can we help ?">
+      <span class="input-group-addon searchfaq"><i class="glyphicon glyphicon-search"></i></span>
+    </div>
+  </div>
+</div>
+</div>
+<div ng-show="showSearchResults" class="row">
+  <h1 style="text-align: center;">Search Results</h1>
+  <div class="col-md-9 col-sm-9 col-xs-12 faqcategoryopen" ng-repeat="category in searchedFaqs">
+    <h4>{{category.title}}</h4>
+    <div class="col-md-12 no_pad">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default" ng-repeat="question in category.question">
+          <div class="panel-heading" role="tab" id="heading{{question.faqQuestionID}}">
+            <h4 class="panel-title">
+       <a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{question.faqQuestionID}}" aria-expanded="false" aria-controls="collapse{{question.faqQuestionID}}">
+         {{question.question}}
+        </a>
+      </h4>
+          </div>
+          <div id="collapse{{question.faqQuestionID}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{question.faqQuestionID}}">
+            <div class="panel-body">
+              <h4>
+                  {{question.answer.answer}}
+      </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="!showSearchResults" class="row blogdivmain">
+  <div class="container nopadding">
+    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+      <div class="col-md-3 col-sm-3 col-xs-12 faqcategory">
+        <h4>Categories</h4>
+        <ul>
+          <li ng-repeat="(index,category) in categories" ng-class="{faqactive: index == 0}"><a ng-click="selectCategory(category)">{{ category.title }}</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-sm-9 col-xs-12 faqcategoryopen">
+        <h4>{{faqDetails.title}}</h4>
+        <div class="col-md-12 no_pad">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default" ng-repeat="question in faqDetails.question">
+              <div class="panel-heading" role="tab" id="heading{{question.faqQuestionID}}">
+                <h4 class="panel-title">
+       <a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{question.faqQuestionID}}" aria-expanded="false" aria-controls="collapse{{question.faqQuestionID}}">
+         {{question.question}}
+        </a>
+      </h4>
+              </div>
+              <div id="collapse{{question.faqQuestionID}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{question.faqQuestionID}}">
+                <div class="panel-body">
+                  <h4>
+                  {{question.answer.answer}}
+      </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row faqfooterbanner">
+  <div class="container">
+    <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12 faqfooterbantxt">
+      <h1>Can’t find what you’re looking for?</h1>
+      <p>Sweet mother of pearl! Fortunately, Australia’s
+        <br> #1 virtual HR team is here to help.</p>
+      <a href="#" class="btn btn-info">Contact support</a>
+    </div>
+  </div>
+</div>
+<div class="row hranxitymain">
+  <div class="container">
+    <div class="col-md-offset-1 col-md-10 hranxity">
+      <h4>Goodbye HR anxiety. Hello Happy HR™</h4>
+      <a href="#" class="btn btn-info bookdemo">Get started</a>
+      <a href="#" class="btn btn-info getstart">Book a demo</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "name": "Cosmos-Frontend",
+  "version": "1.0.0",
+  "description": "Cosmos-Frontend dependencies",
+  "dependencies": {
+    "jquery": "2.1.3",
+    "jquery-ui": "1.10.4",
+    "angular": "1.3.8",
+    "angular-route": "1.3.15",
+    "angular-resource": "1.3.15",
+    "angular-sanitize": "1.3.8",
+    "angular-bootstrap": "0.12.0",
+    "angular-ui": "0.4.0",
+    "bootstrap-sass-official": "3.3.4",
+    "moment": "2.10.2",
+    "underscore": "1.8.3",
+    "ng-file-upload": "^12.2.13"
+  },
+  "resolutions": {
+    "angular": "1.3.8"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

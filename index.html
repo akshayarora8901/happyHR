@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cosmos</title>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+  <link href="libs/bootstrap.min.css" rel="stylesheet">
+  <link href="libs/font-awesome.min.css" rel="stylesheet">
+  <!-- bower:css -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/stylesheets/aos.css">
+  <link rel="stylesheet" href="/assets/stylesheets/style.css">
+  <!-- endinject -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/jquery-ui/ui/jquery-ui.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <script src="/bower_components/moment/moment.js"></script>
+  <script src="/bower_components/underscore/underscore.js"></script>
+  <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="/assets/javascripts/app.js"></script>
+  <script src="/assets/javascripts/controllers/appCtrl.js"></script>
+  <script src="/assets/javascripts/controllers/faqCtrl.js"></script>
+  <script src="/assets/javascripts/controllers/findJobsCtrl.js"></script>
+  <script src="/assets/javascripts/controllers/jobDetailsCtrl.js"></script>
+  <script src="/assets/javascripts/controllers/partnersCtrl.js"></script>
+  <script src="/assets/javascripts/services/jobService.js"></script>
+  <!-- endinject -->
+</head>
+
+<body ng-app="happyHrApp">
+  <div ng-controller="AppCtrl">
+    <div class="container-fluid ">
+      <div class="row header pricing">
+        <div class="col-md-12 col-sm-12 col-xs-12 no_pad">
+          <div class="col-md-2 col-sm-2 col-xs-6">
+            <a href="index.html"><img src="images/insidepagelogo.png" class="img-responsive"></a>
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-12 mainmenurespon">
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid no_pad">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse no_pad" id="myNavbar">
+                  <ul class="nav navbar-nav insidemenu">
+                    <li>
+                      <a href="pricing.html">Pricing</a>
+                    </li>
+                    <li>
+                      <a href="integration.html">Integrations</a>
+                    </li>
+                    <li>
+                      <a ng-href="#/partners">Partners</a>
+                    </li>
+                    <li>
+                      <a href="ourstory.html">Our story</a>
+                    </li>
+                    <li>
+                      <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                      <a href="#/faq">FAQ</a>
+                    </li>
+                    <li class="active">
+                      <a ng-href="#/find-jobs">Find jobs</a>
+                    </li>
+                    <li>
+                      <a href="login.html">Log in</a>
+                    </li>
+                    <li class="getstarted">
+                      <a href="getstarted.html">Get started</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="container">
+        <div class="col-md-12  col-sm-12 col-xs-12 insidebnrtxt">
+            <h1>{{pageHeading}}</h1>
+            <p>{{pageDetails}}</p>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-left:0vw;" ng-view=""></div>
+      <div class="row bottmftr">
+        <div class="container">
+          <div class="col-md-offset-1 col-md-10 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-sm-2 col-xs-6 ftrlist">
+              <h4 class="ftrprd">PRODUCT</h4>
+              <ul>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="partner.html">Partners</a></li>
+                <li><a href="integration.html">Integrations</a></li>
+                <li><a href="demo.html">Demo</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 ftrlist">
+              <h4 class="ftrler">LEARNING</h4>
+              <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="ourstoy.html">Our story</a></li>
+                <li><a href="casestudies.html">Case studies</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 ftrlist">
+              <h4 class="ftrhelp">HELP</h4>
+              <ul>
+                <li><a href="faq.html">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 ftrlist">
+              <h4 class="ftrjob">JOB SEEKERS</h4>
+              <ul>
+                <li><a href="findjobs.html">Find jobs</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6 ftrlist">
+              <h4 class="ftrlegal">LEGAL</h4>
+              <ul>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottomcont">
+        <div class="col-md-3 col-sm-3 col-xs-12 contcftr">
+          <h4>Contact us:</h4>
+          <a href="#" target="_blank"><img src="images/message.png"></a>
+          <a href="#" target="_blank"><img src="images/phone.png"></a>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 socialftr">
+          <a href="#" target="_blank"> <img src="images/facebook.png"></a>
+          <a href="#" target="_blank"><img src="images/twitter.png"></a>
+          <a href="#" target="_blank"> <img src="images/linkedin.png"></a>
+          <a href="#" target="_blank"><img src="images/utube.png"></a>
+          <a href="#" target="_blank"><img src="images/googleplus.png"></a>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 appdwnld">
+          <a href="#" target="_blank"><img src="images/googleplay.png" class="img-responsive"></a>
+          <a href="#" target="_blank"><img src="images/appstore.png" class="img-responsive"></a>
+        </div>
+      </div>
+      <div class="row bottomcont">
+        <div class="col-md-8 col-sm-8 col-xs-12 copyright">
+          <p>Content © 2017 All Rights Reserved. “Happy HR” & “Its HR made happy” are a worldwide registered trademarks of Happy HR Pty Ltd.</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 webdesign text-right">
+          <p>Website designed by</p>
+          <a href="#"><img src="images/yump.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="applyJobModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Find Jobs</h2>
+          </div>
+          <div class="modal-body">
+            <form ng-submit="applyJob()" name="applyJobForm">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <label for="email">First name</label>
+                  <input type="text" class="form-control" id="first-name" placeholder="First name" name="firstName" ng-model="jobDetails.firstName" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Email address</label>
+                  <input type="Email" class="form-control" id="email" placeholder="Email address" name="email" ng-model="jobDetails.email" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Resume</label>
+                  <input type="file" class="form-control" id="resume" placeholder="Resume" name="resume" ngf-select ng-model="resumeFile" ngf-model-invalid="resumeErrFile" required>
+                  <span ng-show="resumeFile.result">Upload Successful</span>
+                  <span class="err" ng-show="resumeErrorMsg">{{resumeErrorMsg}}</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <label for="pwd">Last name</label>
+                  <input type="text" class="form-control" id="last-name" placeholder="Last name" name="lastName" ng-model="jobDetails.lastName" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Phone number</label>
+                  <input type="text" class="form-control" id="phone-number" placeholder="Phone number" name="phoneNumber" ng-model="jobDetails.contact" required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Upload cover letter</label>
+                  <input type="file" class="form-control" id="cover-letter-upload" placeholder="Upload cover letter" name="coverLetter" ngf-select ng-model="coverFile" ngf-model-invalid="coverErrFile">
+                  <span ng-show="coverFile.result">Upload Successful</span>
+                  <span class="err" ng-show="coverErrorMsg">{{coverErrorMsg}}</span>
+                </div>
+                <h3 class="text-center">OR</h3>
+                <div class="form-group">
+                  <label for="pwd">Write cover letter</label>
+                  <textarea class="form-control" id="cover-letter" placeholder="Write cover letter" name="coverLetter" ng-model="jobDetails.WriteCoverLetter"></textarea>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="remember" ng-model="jobDetails.eligibleToWorkInAustralia"> I am eligible to work in Australia</label>
+              </div>
+              <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/libs/aos.js"></script>
+  <script src="/libs/type.js"></script>
+</body>
+
+</html>

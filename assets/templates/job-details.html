@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="col-md-12  col-sm-12 col-xs-12 insidebnrtxt">
+    <h1>{{jobDetails.jobTitle}}</h1>
+    <p>{{jobDetails.companyName}}&nbsp;{{jobDetails.positionFor}}</p>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="row jobinsidemain">
+  <div class="container nopad">
+    <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+      <div class="col-md-7 col-sm-8 col-xs-12 jobsearchdetail">
+        <a ng-href="#/find-jobs"><h5><span class="glyphicon glyphicon-chevron-left"></span>BACK TO JOB SEARCH</h5></a>
+        <p>{{jobDetails.aboutCompany}}</p>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <a class="btn jobinsideapply" data-toggle="modal" data-advid="{{jobDetails.advertisementID}}" data-target="#applyJobModal">Apply now</a>
+          <h5>Share this position:</h5>
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-linkedin-square"></i>
+          <i class="fa fa-google-plus"></i>
+          <i class="fa fa-envelope"></i>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-4 col-sm-4 col-xs-12 blgdetailtbl">
+        <img ng-src="{{jobDetails.companyLogo}}" class="img-responsive">
+        <table class="table jobinsidetbl">
+          <tr>
+            <td class="jobdesc">Company:</td>
+            <td>{{jobDetails.companyName}}</td>
+          </tr>
+          <tr>
+            <td class="jobdesc">Date listed:</td>
+            <td>8 May 2017</td>
+          </tr>
+          <tr>
+            <td class="jobdesc">Location:</td>
+            <td>{{jobDetails.location}}</td>
+          </tr>
+          <tr>
+            <td class="jobdesc">Salary:</td>
+            <td>{{jobDetails.salary}}</td>
+          </tr>
+          <tr>
+            <td class="jobdesc">Work type:</td>
+            <td>{{jobDetails.employmentType}}</td>
+          </tr>
+          <tr>
+            <td class="jobdesc">Category:</td>
+            <td>{{jobDetails.positionFor}}</td>
+          </tr>
+        </table>
+        <a class="btn btn-info applynowdetail" data-toggle="modal" data-advid="{{jobDetails.advertisementID}}" data-target="#applyJobModal">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row hranxitymain">
+  <div class="container">
+    <div class="col-md-offset-1 col-md-10 hranxity">
+      <h4>Are you a business owner? Sign up for HappyHR™</h4>
+      <a href="#" class="btn btn-info bookdemo">Get Started</a>
+      <a href="#" class="btn btn-info getstart">Book a demo</a>
+    </div>
+  </div>
+</div>

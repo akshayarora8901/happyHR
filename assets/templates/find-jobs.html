@@ -1,0 +1,127 @@
+<!-- <div class="container">
+  <div class="col-md-12  col-sm-12 col-xs-12 insidebnrtxt">
+    <h1>Find a job that makes you happy</h1>
+    <p>Search or browse jobs across Australia and apply!</p>
+    <div class="clearfix"></div>
+  </div>
+</div> -->
+<div class="row jobsearchmaindiv">
+  <div class="container ">
+    <div class="col-md-offset-1 col-md-10 col-sm-offset-1  col-sm-10 col-xs-12 findjobssearch">
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="dropdown show search-clasi">
+          <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuIndustryLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{selectedIndustry.title}}
+  <img src="images/updownarrow.png" class="pull-right">
+  </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuIndustryLink">
+            <a class="dropdown-item" ng-click="selectIndustry(defaultIndustry)">{{defaultIndustry.title}}</a>
+            <a ng-repeat="ind in filterData.industry" class="dropdown-item" ng-click="selectIndustry(ind)">{{ind.title}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="dropdown show search-clasi">
+          <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuJobFuncLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{selectedJobFunction.title}}
+  <img src="images/updownarrow.png" class="pull-right">
+  </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuJobFuncLink">
+            <a class="dropdown-item" ng-click="selectJobFunction(defaultJobFunction)">{{defaultJobFunction.title}}</a>
+            <a ng-repeat="jobFunc in jobFunctions" class="dropdown-item" ng-click="selectJobFunction(jobFunc)">{{jobFunc.title}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="dropdown show search-clasi">
+          <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuLocationLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{selectedLocation.title}}
+  <img src="images/updownarrow.png" class="pull-right">
+  </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLocationLink">
+            <a class="dropdown-item" ng-click="selectLoc(defaultLocation)">{{defaultLocation.title}}</a>
+            <a ng-repeat="loc in filterData.location" class="dropdown-item" ng-click="selectLoc(loc)">{{loc.title}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <button ng-click="searchJobs()" type="button" class="btn searchsbmt form-control ">
+          Search <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row employmenttype">
+  <div class="container nopadding">
+    <div class="col-md-12 col-xs-12 col-sm-12 text-center nopadding">
+      <div class="dropdown findjobdrop ">
+        <button class="dropbtn">{{selectedEmploymentType.title}}<img src="images/selectpayarrow.png"></button>
+        <div class="dropdown-content">
+          <a ng-click="selectEmploymentType(defaultEmploymentType)">{{defaultEmploymentType.title}}</a>
+          <a ng-repeat="empType in filterData.employmenttype" ng-click="selectEmploymentType(empType)">{{empType.title}}</a>
+        </div>
+      </div>
+      <div class="dropdown selectpay">
+        <span>{{currentPayscale.from.name}}</span>
+        <select ng-model="selectedPayscale.from" ng-change="payscaleChanged('from')">
+          <option ng-repeat="value in currentPayscale.from.range">$ {{value}}</option >
+        </select>
+      </div>
+      <div class="dropdown selectpay">
+        <span>{{currentPayscale.to.name}}</span>
+        <select ng-model="selectedPayscale.to" ng-change="payscaleChanged('to')">
+          <option ng-repeat="value in currentPayscale.to.range">$ {{value}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row job titlesdiv">
+  <div class="container">
+    <div ng-repeat="job in searchedJobs" class="col-md-12 col-sm-12 col-xs-12 jobtitlmain">
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <a ng-href="#/find-jobs/{{job.advertisementID}}"><h3>{{job.jobTitle}}</h3></a>
+        <h5>{{job.companyName}}</h5>
+        <p>{{job.aboutCompany}}</p>
+        <a class="jobbtnserch">{{job.employmentType}}</a>
+        <a class="jobbtnserch">{{job.location}}</a>
+        <a class="jobbtnserch">{{job.salary}}</a>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <a class="btn btnapplunow" data-toggle="modal" data-advid="{{job.advertisementID}}" data-target="#applyJobModal">Apply Now</a>
+        <div class="col-md-12 col-sm-12 col-xs-12 jobtitlimg">
+          <img ng-src="{{job.companyLogo}}" class="img-responsive center-block">
+        </div>
+      </div>
+    </div>
+    <div ng-if="pager.pages.length" class="col-md-12 col-sm-12 col-xs-12">
+      <nav aria-label="Page navigation example " class="pagination12">
+        <ul class="pagination">
+          <li ng-class="{disabled:pager.currentPage === 1,'page-item':true}">
+            <a class="page-link" aria-label="Previous" ng-click="setPage(pager.currentPage - 1)">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+          </li>
+          <li ng-repeat="page in pager.pages" ng-class="{pageactive: pager.currentPage === page}">
+            <a ng-click="setPage(page)">{{page}}</a>
+          </li>
+          <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" aria-label="Next" ng-click="setPage(pager.currentPage + 1)">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="row hranxitymain">
+  <div class="container">
+    <div class="col-md-offset-1 col-md-10 hranxity">
+      <h4>Are you a business owner? Sign up for HappyHR™</h4>
+      <a href="#" class="btn btn-info bookdemo">Get Started</a>
+      <a href="#" class="btn btn-info getstart">Book a demo</a>
+    </div>
+  </div>
+</div>

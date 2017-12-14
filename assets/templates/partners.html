@@ -1,0 +1,148 @@
+<div class="row  inpartnerdivmain">
+  <div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <ul class="nav nav-tabs">
+      	<li class="active">
+      		<a data-toggle="tab" data-target="#home">All states</a>
+      	</li>
+      	<li ng-repeat="state in stateList">
+      		<a data-toggle="tab" data-target="#{{state}}">{{state}}</a>
+      	</li>
+      </ul>
+      <div class="tab-content">
+      	<div id="home" class="tab-pane fade in active">
+      		<div class="col-md-2 col-sm-2 col-xs-6 insidepartnerlogo" ng-repeat="partner in partners">
+      			<img ng-src="{{partner.partnerLogo}}" class="img-responsive center-block" ng-click="setPartnerData(partner)" data-toggle="modal" data-target="#myModal">
+      		</div>
+      	</div>
+      	<div ng-repeat="state in stateList" id="{{state}}" class="tab-pane fade">
+      		<div class="col-md-2 col-sm-2 col-xs-6 insidepartnerlogo" ng-repeat="partner in partners" ng-if="partner.partnerState == state">
+      			<img ng-src="{{partner.partnerLogo}}" class="img-responsive center-block" ng-click="setPartnerData(partner)" data-toggle="modal" data-target="#myModal">
+      		</div>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog partpopup">
+    <!-- Modal content-->
+    <div class="modal-content" style="overflow: auto; padding:0px 0px 20px 0px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title">Our partner</h2>
+      </div>
+      <div class="modal-body">
+        <form name="myForm">
+          <div class="col-md-12 col-sm-12 col-xs-12 ourparpop">
+            <div class="parlog">
+              <img ng-src="{{selectedPartner.partnerLogo}}" class="img-responsive center-block">
+            </div>
+            <div class="parlogtxt">
+              <h4><b>{{selectedPartner.partnerName}}</b></h4>
+              <a href="#"><i class="fa fa-globe"></i> {{selectedPartner.partnerWebsite}}</a>
+              <br> <a href="#"><i class="fa fa-phone"></i>  {{selectedPartner.partnerPhone}}</a>
+              <br><a href="#"><i class="fa fa-envelope"></i> {{selectedPartner.partnerEmail}}</a>
+              <br> <span><i class="fa fa-map-marker"></i> {{selectedPartner.partnerDisplayAddress}}</span>
+            </div>
+            <div class="parlogtxt">
+              <h4><b>{{selectedPartner.partnerPersonName}}
+</b></h4>
+              <h5><i class="fa fa-user"></i> {{selectedPartner.partnerPersonPosition}}</h5>
+              <a href="#"><i class="fa fa-envelope"></i>  {{selectedPartner.partnerPersonEmail}}</a>
+            </div>
+            <hr>
+            <div class="popupardesc">
+              <h4><b>Company Bio</b></h4>
+              <p>{{selectedPartner.partnerBio}}
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row becomechanlpartner">
+  <div class="container">
+    <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12 becomechannel">
+      <h2>Become a partner</h2>
+      <p>Leverage our services as your point of difference with the added benefit of a revenue stream. Become a Happy HR partner today.
+      </p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner1.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Increase the range of your services </h4>
+            <p>Strengthen your value proposition and value add to your clients with access to our services.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner2.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Develop an additional revenue stream</h4>
+            <p>Capitalise on an additional annuity revenue stream that gives your business extra liquidity.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner3.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Ensure your clients are HR compliant</h4>
+            <p>Grow and retain more clients by ensuring their policies and contracts stay 24/7 compliant.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner4.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Have a dedicated channel partner</h4>
+            <p>Work with our partnership network to increase the value to your clients and generate leads.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner5.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Enjoy co-branded resources</h4>
+            <p>Get a bargain on your branding efforts and enjoy a wider reach with co-branded materials.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-xs-12 chanelcontdiv">
+          <div class="col-md-2 col-sm-2 col-xs-2 chanlimg">
+            <img src="assets/images/channelpartner6.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-10 chaneldiv">
+            <h4>Demonstrate thought leadership in HR</h4>
+            <p>Reinforce your client relationships by having us present HR seminars to your clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row hranxitymain">
+  <div class="container">
+    <div class="col-md-offset-1 col-md-10 hranxity">
+      <h4>Let's start a beautiful partnership</h4>
+      <a href="#" class="btn btn-info bookdemo">Become a partner</a>
+    </div>
+  </div>
+</div>
